@@ -1,0 +1,20 @@
+{
+  "name": "basics",
+  "version": "1.0.0",
+  "description": "First try",
+  "main": "sketch.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "testing"
+  ],
+  "author": "issam",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "@jest/globals": "^26.6.2"
+  }
+}
