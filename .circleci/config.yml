@@ -6,13 +6,12 @@ workflows:
     filters:
       branches:
         only: master
-  node-tests:
-    jobs:
-      - node/test
   deploy_prod:
     requires:
       - build
       - node-tests
+    jobs:
+      - node/test
     filters:
       branches:
         only: master
