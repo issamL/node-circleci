@@ -1,9 +1,23 @@
 version: 2.1
+jobs:
+  commit:
+    docker:
+      - image: 'circleci/node:10'
+    steps:
+      - checkout
+      - sonarcloud/scan_with_npm
 orbs:
   node: circleci/node@3.0.0
+  sonarcloud: extendaretail/sonarcloud@0.0.2
 workflows:
   node-tests:
     jobs:
+      - commit:
+          context: sonarcloud
+      - sonarcloud/check_quality_gate:
+          context: sonarcloud
+          requires:
+            - commit
       - node/test:
           filters:
             branches:
