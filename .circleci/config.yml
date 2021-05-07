@@ -13,9 +13,7 @@ workflows:
   node-tests:
     jobs:
       - commit:
-          context: sonarcloud
       - sonarcloud/check_quality_gate:
-          context: sonarcloud
           requires:
             - commit
       - node/test:
