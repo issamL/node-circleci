@@ -10,10 +10,11 @@ orbs:
   node: circleci/node@3.0.0
   sonarcloud: extendaretail/sonarcloud@1.0.2
 workflows:
+  jobs:
+    - build:
+        - context: sonarcloud
   node-tests:
     jobs:
-      - build:
-          - context: sonarcloud
       - node/test:
           filters:
             branches:
