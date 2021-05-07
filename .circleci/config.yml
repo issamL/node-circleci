@@ -7,4 +7,5 @@ workflows:
       - node/test
         filters:
           branches:
-            only: /test\/.*/
+            ignore:
+              -test
