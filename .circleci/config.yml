@@ -2,9 +2,9 @@ version: 2.1
 orbs:
   node: circleci/node@3.0.0
 workflows:
-  jobs:
-    - node/test
-    - build:
+  node-tests:
+    jobs:
+      - node/test
         filters:
           tags:
             only: master
