@@ -4,6 +4,13 @@ orbs:
   node: circleci/node@3.0.0
 jobs:
   build:
+    parameters:
+      sonar.projectKey:
+        type: string
+        default: issamL_node-circleci
+      sonar.organization:
+        type: string
+        default: 07issam-key
     docker:
       - image: 'node:latest'
     steps:
