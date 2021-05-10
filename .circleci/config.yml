@@ -12,7 +12,8 @@ jobs:
 workflows:
   main:
     jobs:
-      - build
+      - build:
+          context: sonarcloud
   node-tests:
     jobs:
       - node/test:
