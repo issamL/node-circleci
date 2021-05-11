@@ -10,7 +10,7 @@ jobs:
       - checkout
       - sonar_analysis/check_sonar_init_command
       - sonar_analysis/check_sonar_quality_gate:
-        context: sonarcloud
+          context: sonarcloud
 workflows:
   main:
     jobs:
