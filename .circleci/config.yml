@@ -7,9 +7,10 @@ jobs:
     docker:
       - image: 'node:latest'
     steps:
+      - run: apt-get install -y sudo
       - run:
          name: installing jq
-         command: sudo pip install jq
+         command: sudo apt-get install jq
       - checkout
       - sonar_analysis/check_sonar_init_command
       - sonar_analysis/check_sonar_quality_gate
