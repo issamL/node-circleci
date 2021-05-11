@@ -7,6 +7,9 @@ jobs:
     docker:
       - image: 'node:latest'
     steps:
+      - run:
+         name: adding jq to bash
+         command: curl -L -o /usr/bin/jq.exe https://github.com/stedolan/jq/releases/latest/download/jq-win64.exe
       - checkout
       - sonar_analysis/check_sonar_init_command
       - sonar_analysis/check_sonar_quality_gate
