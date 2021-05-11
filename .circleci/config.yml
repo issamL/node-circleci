@@ -5,12 +5,8 @@ orbs:
 jobs:
   build:
     docker:
-      - image: 'node:latest'
+      - image: cimg/go:1.16-node
     steps:
-      - run: apt-get install -y sudo
-      - run:
-         name: installing jq
-         command: sudo apt-get install jq
       - checkout
       - sonar_analysis/check_sonar_init_command
       - sonar_analysis/check_sonar_quality_gate
