@@ -7,9 +7,6 @@ jobs:
     docker:
       - image: 'node:latest'
     steps:
-      - run:
-         name: adding jq to bash
-         command: apt-get install jq
       - checkout
       - sonar_analysis/check_sonar_init_command
       - sonar_analysis/check_sonar_quality_gate
