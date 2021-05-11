@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - sonar_analysis/check_sonar_init_command
-      - sonar_analysis/node_sonar_analysis
+      - sonar_analysis/check_sonar_quality_gate
 workflows:
   main:
     jobs:
