@@ -8,9 +8,7 @@ jobs:
       - image: cimg/go:1.16-node
     steps:
       - checkout
-      - sonar_analysis/check_sonar_init_command
-      - sonar_analysis/check_sonar_quality_gate:
-          context: sonarcloud
+      - sonar_analysis/check_sonar_quality_gate
 workflows:
   main:
     jobs:
