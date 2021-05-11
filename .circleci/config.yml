@@ -8,6 +8,7 @@ jobs:
       - image: cimg/go:1.16-node
     steps:
       - checkout
+      - sonar_analysis/node_sonar_analysis
       - sonar_analysis/check_sonar_quality_gate
 workflows:
   main:
