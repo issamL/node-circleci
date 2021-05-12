@@ -1,15 +1,14 @@
 version: 2.1
 orbs:
-  sonar_analysis: taptapnetworks/sonar_analysis@2.1.5
+  sonarcloud: sonarsource/sonarcloud@1.0.2
   node: circleci/node@3.0.0
 jobs:
   build:
     docker:
-      - image: cimg/go:1.16-node
+      - image: 'node:latest'
     steps:
       - checkout
-      - sonar_analysis/node_sonar_analysis
-      - sonar_analysis/check_sonar_quality_gate
+      - sonarcloud/scan
 workflows:
   main:
     jobs:
@@ -22,7 +21,6 @@ workflows:
             branches:
               only:
                 - master
-
 
 
 
