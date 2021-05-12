@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           name: check directory
-          command: pwd & ls
+          command: pwd & ls -a
       - sonarcloud/scan
 workflows:
   main:

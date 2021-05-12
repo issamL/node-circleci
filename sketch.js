@@ -1,4 +1,8 @@
 function sum(a, b) {
-    return a + b;
+    if(0){console.log("test")
+    }else{
+        return a + b;
+    }
+
 }
 module.exports = sum;
