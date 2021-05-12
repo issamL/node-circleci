@@ -8,6 +8,9 @@ jobs:
       - image: 'node:latest'
     steps:
       - checkout
+      - run:
+          name: check directory
+          command: pwd
       - sonarcloud/scan
 workflows:
   main:
