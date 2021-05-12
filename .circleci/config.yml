@@ -4,8 +4,6 @@ orbs:
   node: circleci/node@3.0.0
 jobs:
   build:
-    docker:
-      - image: 'node:latest'
     steps:
       - checkout
       - run:
